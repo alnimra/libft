@@ -19,12 +19,12 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 	t_list *first;
 
 	prev_f_elem = NULL;
-	if(!lst || !f)
-		return NULL;
-	while(lst)
+	if (!lst || !f)
+		return (NULL);
+	while (lst)
 	{
 		f_elem = f(lst);
-		if(!prev_f_elem)
+		if (!prev_f_elem)
 		{
 			prev_f_elem = f_elem;
 			first = f_elem;
@@ -36,5 +36,5 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 		}
 		lst = lst->next;
 	}
-	return first;
+	return (first);
 }

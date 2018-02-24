@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static int get_n(char const *s, char c)
+static int	g_n(char const *s, char c)
 {
 	int num_of_words;
 	int i;
@@ -32,18 +32,18 @@ static int get_n(char const *s, char c)
 			in_word = 0;
 		i++;
 	}
-	return (num_of_words);
+	return (num_of_words + 1);
 }
 
-char **ft_strsplit(char const *s, char c)
+char		**ft_strsplit(char const *s, char c)
 {
-	char **ret;
-	int	num_words;
-	int	in_word;
-	int	i;
-	int	s_i;
+	char	**ret;
+	int		num_words;
+	int		in_word;
+	int		i;
+	int		s_i;
 
-	if (!s || !c || !(ret = (char **)ft_memalloc(sizeof(char *) * (get_n(s, c) + 1))))
+	if (!s || !c || !(ret = (char **)ft_memalloc(sizeof(char*) * (g_n(s, c)))))
 		return (NULL);
 	i = -1;
 	in_word = 0;

@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static int getNumberOfDigits(long c)
+static int		get_num_digi(long c)
 {
 	int size;
 
@@ -20,16 +20,16 @@ static int getNumberOfDigits(long c)
 	if (c < 0)
 		size++;
 	if (c == 0)
-		return 1;
+		return (1);
 	while (c != 0)
 	{
 		c /= 10;
 		size++;
 	}
-	return size;
+	return (size);
 }
 
-static void put_base(long c, char *str, int i)
+static void		put_base(long c, char *str, int i)
 {
 	char nbr;
 
@@ -44,13 +44,13 @@ static void put_base(long c, char *str, int i)
 	str[i] = nbr;
 }
 
-char *ft_itoa(int n)
+char			*ft_itoa(int n)
 {
 	char *str;
 
-	if(!(str = (char *)ft_memalloc(sizeof(*str) + (getNumberOfDigits(n)))))
-		return NULL;
-	put_base(n, str, getNumberOfDigits(n) - 1);
-	str[getNumberOfDigits(n)] = '\0';
-	return str;
+	if (!(str = (char *)ft_memalloc(sizeof(*str) + (get_num_digi(n)))))
+		return (NULL);
+	put_base(n, str, get_num_digi(n) - 1);
+	str[get_num_digi(n)] = '\0';
+	return (str);
 }

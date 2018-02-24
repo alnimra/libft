@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void ft_strdel(char **as)
+void	ft_strdel(char **as)
 {
-	return ft_memdel((void**)as);
+	return (ft_memdel((void**)as));
 }

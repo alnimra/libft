@@ -12,15 +12,15 @@
 
 #include "libft.h"
 
-char *ft_strsub(char const *s, unsigned int start, size_t len)
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	char *fresh_str;
-	size_t i;
+	char	*fresh_str;
+	size_t	i;
 
-	if(!s || !(fresh_str = ft_strnew(len)))
-		return NULL;
+	if (!s || !(fresh_str = ft_strnew(len)))
+		return (NULL);
 	i = -1;
-	while(++i < len)
+	while (++i < len)
 		*(fresh_str + i) = *(s + start + i);
-		return fresh_str;
+	return (fresh_str);
 }

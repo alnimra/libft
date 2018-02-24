@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int is_ws(char c)
+int	is_ws(char c)
 {
 	return (c == ' ' || c == '\n' || c == '\t');
 }
