@@ -74,6 +74,7 @@ ft_strtrim.c\
 ft_tolower.c\
 ft_toupper.c\
 is_ws.c\
+make_zero_from_neg.c\
 
 OBJ = $(DEPENDENCY:.c=.o)
 
