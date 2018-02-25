@@ -48,7 +48,7 @@ char		**ft_strsplit(char const *s, char c)
 	i = -1;
 	in_word = 0;
 	num_words = 0;
-	while (s[++i])
+	while (*(s + i++))
 	{
 		if (!in_word && s[i] != c)
 		{
@@ -57,9 +57,21 @@ char		**ft_strsplit(char const *s, char c)
 		}
 		else if (in_word && (s[i] == c || s[i] == '\0'))
 		{
-			ret[num_words++] = ft_strsub(s, s_i, i - s_i);
+
+			if(!(ret[num_words++] = ft_strsub(s, s_i, i - s_i)))
+				return NULL;
 			in_word = 0;
 		}
 	}
 	return (ret);
 }
+
+// int main(void)
+// {
+// char **tt;
+// 	tt = ft_strsplit("salut****", '*');
+// 	if(strcmp(tt[0], "salut") == 0)
+// 		ft_putstr("GOOD\n");
+// 	if(tt[1] == NULL)
+// 		ft_putstr("jdfjdjfjdfjdfjdjfdjfjdfjdjdf\n");
+// }
