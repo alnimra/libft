@@ -83,6 +83,7 @@ all: $(NAME)
 $(NAME): $(DEPENDENCY)
 		$(CC) $(FLAG) $(OPTION) $(DEPENDENCY)
 		ar rcs $(NAME) $(OBJ)
+		ranlib $(NAME)
 
 clean:
 	rm -f $(OBJ)
