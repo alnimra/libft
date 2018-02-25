@@ -1,33 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   make_zero_from_neg.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mray <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/22 13:37:52 by mray              #+#    #+#             */
-/*   Updated: 2018/02/22 13:37:52 by mray             ###   ########.fr       */
+/*   Created: 2018/02/25 02:09:35 by mray              #+#    #+#             */
+/*   Updated: 2018/02/25 02:09:45 by mray             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+int	make_zero_from_neg(int c)
 {
-	int i;
-
-	i = 0;
-	while (*s)
-	{
-		s++;
-		i++;
-	}
-	while (i >= 0)
-	{
-		if (*s == (char)c)
-			return ((char*)s);
-		s--;
-		i--;
-	}
-	return (NULL);
+	if (c < 0)
+		return (0);
+	return (c);
 }

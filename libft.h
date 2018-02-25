@@ -17,6 +17,7 @@
 # include <unistd.h>
 
 int				is_ws(char c);
+int				make_zero_from_neg(int c);
 void			*ft_memset(void *b, int c, size_t len);
 void			ft_bzero(void *s, size_t n);
 void			*ft_memcpy(void *dst, const void *src, size_t n);
