@@ -10,11 +10,9 @@
 #                                                                              #
 # **************************************************************************** #
 
-CC = gcc
 NAME = libft.a
-FLAG = -Wall -Wextra -Werror
-OPTION = -c
-DEPENDENCY = \
+FLAGS = -Wall -Wextra -Werror
+SRC = \
 ft_atoi.c\
 ft_bzero.c\
 ft_isalnum.c\
@@ -76,18 +74,17 @@ ft_toupper.c\
 is_ws.c\
 make_zero_from_neg.c\
 
-OBJ = $(DEPENDENCY:.c=.o)
-
 all: $(NAME)
 
-$(NAME): $(DEPENDENCY)
-		$(CC) $(FLAG) $(OPTION) $(DEPENDENCY)
-		ar rc $(NAME) $(OBJ)
-		ranlib $(NAME)
+$(NAME):
+	gcc $(FLAGS) -c $(SRC)
+	ar rc $(NAME) $(SRC:.c=.o)
+	ranlib $(NAME)
 
 clean:
-	rm -f $(OBJ)
+	rm -f $(SRC:.c=.o)
 
 fclean: clean
 	rm -f $(NAME)
+
 re: fclean all
