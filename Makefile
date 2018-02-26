@@ -6,16 +6,16 @@
 #    By: mray <marvin@42.fr>                        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/22 17:10:30 by mray              #+#    #+#              #
-#    Updated: 2018/02/25 21:14:35 by mray             ###   ########.fr        #
+#    Updated: 2018/02/25 21:20:51 by mray             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
 NAME = libft.a
-HEADER = libft.h
 FLAG = -Wall -Wextra -Werror
-OPTION = -I$(HEADER) -c
-DEPENDENCY = ft_atoi.c\
+OPTION = -c
+DEPENDENCY = \
+ft_atoi.c\
 ft_bzero.c\
 ft_isalnum.c\
 ft_isalpha.c\
