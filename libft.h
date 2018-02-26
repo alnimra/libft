@@ -23,7 +23,11 @@ typedef struct	s_list
 	struct s_list	*next;
 }				t_list;
 int				is_ws(char c);
+char			*ft_itoa(int n);
+void			put_base(long c, char *str, int i);
 int				make_zero_from_neg(int c);
+int				get_num_digi(long c);
+int				g_n(char const *s, char c);
 void			*ft_memset(void *b, int c, size_t len);
 void			ft_bzero(void *s, size_t n);
 void			*ft_memcpy(void *dst, const void *src, size_t n);

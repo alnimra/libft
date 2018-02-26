@@ -1,42 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*   get_num_digi.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mray <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/22 21:23:47 by mray              #+#    #+#             */
-/*   Updated: 2018/02/22 21:23:47 by mray             ###   ########.fr       */
+/*   Created: 2018/02/25 21:51:38 by mray              #+#    #+#             */
+/*   Updated: 2018/02/25 21:51:48 by mray             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		**ft_strsplit(char const *s, char c)
+int	g_n(char const *s, char c)
 {
-	char	**ret;
-	int		num_words;
-	int		in_word;
-	int		i;
-	int		s_i;
+	int num_of_words;
+	int i;
+	int in_word;
 
-	if (!s || !c || !(ret = (char **)ft_memalloc(sizeof(char*) * (g_n(s, c)))))
-		return (NULL);
-	i = -1;
+	i = 0;
+	num_of_words = 0;
 	in_word = 0;
-	num_words = 0;
-	while (*(s + make_zero_from_neg(i++)))
+	while (s[i])
 	{
 		if (!in_word && s[i] != c)
 		{
-			s_i = i;
+			num_of_words++;
 			in_word = 1;
 		}
-		else if (in_word && (s[i] == c || s[i] == '\0'))
-		{
-			ret[num_words++] = ft_strsub(s, s_i, i - s_i);
+		else if (in_word && s[i] == c)
 			in_word = 0;
-		}
+		i++;
 	}
-	return (ret);
+	return (num_of_words + 1);
 }

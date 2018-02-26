@@ -73,6 +73,9 @@ ft_tolower.c\
 ft_toupper.c\
 is_ws.c\
 make_zero_from_neg.c\
+get_num_digi.c\
+put_base.c\
+g_n.c\
 
 all: $(NAME)
 

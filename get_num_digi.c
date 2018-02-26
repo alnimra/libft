@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   get_num_digi.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mray <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/23 14:00:45 by mray              #+#    #+#             */
-/*   Updated: 2018/02/23 14:00:45 by mray             ###   ########.fr       */
+/*   Created: 2018/02/25 21:51:38 by mray              #+#    #+#             */
+/*   Updated: 2018/02/25 21:51:48 by mray             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char			*ft_itoa(int n)
+int		get_num_digi(long c)
 {
-	char *str;
+	int size;
 
-	if (!(str = (char *)ft_memalloc(sizeof(*str) + (get_num_digi(n)))))
-		return (NULL);
-	put_base(n, str, get_num_digi(n) - 1);
-	str[get_num_digi(n)] = '\0';
-	return (str);
+	size = 0;
+	if (c < 0)
+		size++;
+	if (c == 0)
+		return (1);
+	while (c != 0)
+	{
+		c /= 10;
+		size++;
+	}
+	return (size);
 }
