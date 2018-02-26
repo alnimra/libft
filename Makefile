@@ -6,7 +6,7 @@
 #    By: mray <marvin@42.fr>                        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/22 17:10:30 by mray              #+#    #+#              #
-#    Updated: 2018/02/25 21:13:36 by mray             ###   ########.fr        #
+#    Updated: 2018/02/25 21:14:35 by mray             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -83,6 +83,7 @@ all: $(NAME)
 $(NAME): $(DEPENDENCY)
 		$(CC) $(FLAG) $(OPTION) $(DEPENDENCY)
 		ar rc $(NAME) $(OBJ)
+		ranlib $(NAME)
 
 clean:
 	rm -f $(OBJ)
