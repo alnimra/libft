@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   free_array.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mray <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/22 16:17:51 by mray              #+#    #+#             */
-/*   Updated: 2018/02/22 16:17:51 by mray             ###   ########.fr       */
+/*   Created: 2018/03/08 22:50:29 by mray              #+#    #+#             */
+/*   Updated: 2018/03/08 22:50:37 by mray             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+void	free_array(void **array)
 {
-	char *str;
+	int i;
 
-	if (!(str = (char *)ft_memalloc(size + 1)))
-		return (NULL);
-	return (str);
+	i = -1;
+	while (array[++i])
+		ft_memdel((void **)&array[i]);
+	free(array);
 }

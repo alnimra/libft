@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_is_max.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mray <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/22 16:17:51 by mray              #+#    #+#             */
-/*   Updated: 2018/02/22 16:17:51 by mray             ###   ########.fr       */
+/*   Created: 2018/03/06 16:43:10 by mray              #+#    #+#             */
+/*   Updated: 2018/03/06 16:44:43 by mray             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+int	ft_is_max(int a, int b)
 {
-	char *str;
-
-	if (!(str = (char *)ft_memalloc(size + 1)))
-		return (NULL);
-	return (str);
+	if (a > b)
+		return (a);
+	return (b);
 }

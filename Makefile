@@ -76,6 +76,11 @@ make_zero_from_neg.c\
 get_num_digi.c\
 put_base.c\
 g_n.c\
+get_next_line.c\
+ft_fst_strchr.c\
+ft_is_max.c\
+ft_atoi_base.c\
+free_array.c\
 
 all: $(NAME)
 

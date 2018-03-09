@@ -15,6 +15,11 @@
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
+# include <sys/types.h>
+# include <sys/uio.h>
+# include <fcntl.h>
+# define BUFF_SIZE 40000
+# define FD_LIMIT 5000
 
 typedef struct	s_list
 {
@@ -87,4 +92,9 @@ void			ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void			ft_lstadd(t_list **alst, t_list *new);
 void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+int				get_next_line(int const fd, char **line);
+char			*ft_fst_strchr(const char *s, int c);
+int				max(int a, int b);
+int				ft_atoi_base(char *str, int b);
+void			free_array(void **array);
 #endif
